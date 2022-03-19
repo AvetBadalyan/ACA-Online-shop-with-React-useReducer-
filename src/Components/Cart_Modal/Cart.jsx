@@ -3,8 +3,8 @@ import "./Cart.css";
 
 export default function Cart() {
   return (
-    <div>
-
+    <div className="Cart">
+<p>the cart is empty</p>
     </div>
   );
 }

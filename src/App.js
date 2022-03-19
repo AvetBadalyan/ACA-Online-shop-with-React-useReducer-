@@ -1,50 +1,40 @@
-import { useEffect, useReducer } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import "./App.css";
+import Cart from "./Components/Cart_Modal/Cart";
 import Header from "./Components/Header/Header";
 import Products from "./Components/Products/Products";
 
-export const ACTION_TYPES = {
-  SET_PRODUCTS: "SET_PRODUCTS",
-  COUNTER_CHANGE_HANDLER: "COUNTER_CHANGE_HANDLER",
-};
-
-function reducer(state, action) {
-  switch (action.type) {
-    case ACTION_TYPES.SET_PRODUCTS:
-      return action.res;
-    // ՉԵՄ ՀԱՍԿԱՑԵԼ ՈՐ ԱՅԴԻՆ ՈՒՄՆ Ա
-    case ACTION_TYPES.COUNTER_CHANGE_HANDLER: {
-      return state.map((item) => {
-        if (item.id === action.id) {
-          return { ...item, count: item.count + action.count };
-        } else {
-          return item;
-        }
-      });
-    }
-  }
-}
-
 function App() {
-  const [products, dispatch] = useReducer(reducer, []);
+  const [products, setProducts] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const cartOpenHandler = () => {
+    setIsCartOpen(!isCartOpen);
+  };
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products").then((res) =>
-      res.json().then((res) => {
-        let resWithCounter = res.map((item) => ({ ...item, count: 0 }));
-        dispatch({
-          type: ACTION_TYPES.SET_PRODUCTS,
-          res: resWithCounter,
-        });
-      })
-    );
+    fetch("https://fakestoreapi.com/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(
+          data.map((item) => {
+            return { ...item, totalCount: 0 };
+          })
+        );
+      });
   }, []);
 
   console.log(products);
   return (
     <div className="App">
-      <Header products={products} />
-      <Products products={products} dispatch={dispatch} />
+      <Header
+        products={products}
+        cartOpenHandler={cartOpenHandler}
+        isCartOpen={isCartOpen}
+        setIsCartOpen={setIsCartOpen}
+      />
+      {isCartOpen && <Cart />}
+      <Products products={products} />
     </div>
   );
 }

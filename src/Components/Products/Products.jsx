@@ -2,11 +2,11 @@ import React from "react";
 import Item from "../Item/Item";
 import "./Products.css";
 
-export default function Products({ products, dispatch }) {
+export default function Products({ products }) {
   return (
     <div className="All-Products">
       {products.map((product) => (
-        <Item dispatch={dispatch} {...product} key={product.id} />
+        <Item {...product} key={product.id} />
       ))}
     </div>
   );
