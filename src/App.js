@@ -5,7 +5,7 @@ import Products from "./Components/Products/Products";
 
 export const ACTION_TYPES = {
   SET_PRODUCTS: "SET_PRODUCTS",
-  COUNTER_ADD_HANDLER: "COUNTER_ADD_HANDLER",
+  COUNTER_CHANGE_HANDLER: "COUNTER_CHANGE_HANDLER",
 };
 
 function reducer(state, action) {
@@ -13,10 +13,10 @@ function reducer(state, action) {
     case ACTION_TYPES.SET_PRODUCTS:
       return action.res;
     // ՉԵՄ ՀԱՍԿԱՑԵԼ ՈՐ ԱՅԴԻՆ ՈՒՄՆ Ա
-    case ACTION_TYPES.COUNTER_ADD_HANDLER: {
+    case ACTION_TYPES.COUNTER_CHANGE_HANDLER: {
       return state.map((item) => {
         if (item.id === action.id) {
-          return { ...item, count: item.count + 1 };
+          return { ...item, count: item.count + action.count };
         } else {
           return item;
         }
@@ -43,7 +43,7 @@ function App() {
   console.log(products);
   return (
     <div className="App">
-      <Header />
+      <Header products={products} />
       <Products products={products} dispatch={dispatch} />
     </div>
   );
