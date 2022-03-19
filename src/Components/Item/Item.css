@@ -1,0 +1,23 @@
+.Wrapper {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid gray;
+    border-radius: 20%;
+    box-shadow: 2px 10px 10px 1px rgba(70, 70, 70, 0.8);
+}
+
+.Counter {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    gap: 5px;
+    
+}
