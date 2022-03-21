@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Header.css";
 import CartLogo from "../../Assets/cart.svg";
 
-export default function Header({ isCartOpen, setIsCartOpen, cartOpenHandler }) {
+export default function Header({ cartOpenHandler }) {
   return (
     <div>
       <header className="header">
