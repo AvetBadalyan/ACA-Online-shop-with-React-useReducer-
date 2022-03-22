@@ -26,7 +26,6 @@ function App() {
       setCartState((prev) => {
         return prev.map((item) => {
           if (item.id === el.id) {
-            console.log(item, el);
             return { ...item, totalCount: item.totalCount + 1 };
           }
           return item;
@@ -50,10 +49,46 @@ function App() {
     }
   };
 
+  const addModalCount = (id) => {
+    setCartState((prev) =>
+      prev.map((item) => {
+        if (item.id === id) {
+          return { ...item, totalCount: item.totalCount + 1 };
+        }
+        return item;
+      })
+    );
+  };
+
+  const subModalCount = (id) => {
+    setCartState((prev) =>
+      prev.map((item) => {
+        if (item.id === id && item.totalCount !== 0) {
+          return { ...item, totalCount: item.totalCount - 1 };
+        } else return item;
+      })
+    );
+  };
+
+  const emptyModal = (id) => {
+    setCartState((prev) => {
+      return prev.filter((item) => {
+        return item.id !== id;
+      });
+    });
+  };
+
   return (
     <div className="App">
       <Header products={products} cartOpenHandler={cartOpenHandler} />
-      {isCartOpen && <Modal cartState={cartState} />}
+      {isCartOpen && (
+        <Modal
+          cartState={cartState}
+          addModalCount={addModalCount}
+          subModalCount={subModalCount}
+          emptyModal={emptyModal}
+        />
+      )}
       <Products products={products} addCart={addCart} subCart={subCart} />
     </div>
   );

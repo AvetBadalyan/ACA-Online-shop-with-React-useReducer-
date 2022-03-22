@@ -1,0 +1,14 @@
+.trash {
+  width: 20px;
+  height: 20px;
+}
+
+.Wrapper,
+button {
+  font-size: 20px;
+}
+
+.modal-item {
+  width: 88px;
+  height: 88px;
+}

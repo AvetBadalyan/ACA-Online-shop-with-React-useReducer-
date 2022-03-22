@@ -1,11 +1,11 @@
 .Modal {
-    height: 500px;
-    width: 500px;
-    overflow: hidden;
-    background-color: blue;
-    border: 2px solid black;
-    cursor: pointer;
-    position: absolute;
-    color: black;
-    right: 0;
+  height: 80vh;
+  width: 80vw;
+  overflow: scroll;
+  background-color: rgba(0, 0, 255, 0.5);
+  border: 2px solid black;
+  cursor: pointer;
+  position: absolute;
+  color: black;
+  right: 1vw;
 }

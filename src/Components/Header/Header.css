@@ -1,13 +1,12 @@
 .header {
   padding: 20px;
-  background-color: gray;
+  background-color: blue;
   height: 200px;
   width: 100vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
   position: relative;
-
 }
 
 h1 {
@@ -19,7 +18,8 @@ h1 {
 }
 
 .CartLogo {
-display: flex;
-justify-content: flex-end;
-align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
 }
