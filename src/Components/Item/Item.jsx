@@ -11,7 +11,7 @@ export default function Item({ price, title, image, id, addCart, subCart }) {
     price: price,
     id: id,
     image: image,
-    totalCount: totalCount + 1,
+    totalCount: totalCount+1,
   };
 
   const addCartHandler = () => {

@@ -3,14 +3,14 @@ import "./Modal.css";
 import ModalItem from "./ModalItem";
 
 export default function Modal({
-  cartState,
+  arrayofProductsInCart,
   addModalCount,
   subModalCount,
   emptyModal,
 }) {
   return (
     <div className="Modal">
-      {cartState.map((item) => (
+      {arrayofProductsInCart.map((item) => (
         <ModalItem
           {...item}
           key={item.id}
