@@ -37,6 +37,24 @@ function App() {
     setProducts(changedCart);
   };
 
+  const deleteItemFromCart = (id) => {
+    let filteredCart = products.map((item) => {
+      return item.id === id ? { ...item, itemCount: 0 } : item;
+    });
+    setProducts(filteredCart);
+  };
+
+  const emptyCart = () => {
+    let deletedCart = products.map((item) => {
+      if (item.itemCount > 0) {
+        return { ...item, itemCount: 0 };
+      } else {
+        return item;
+      }
+    });
+    setProducts(deletedCart);
+  };
+
   const cartProducts = products.filter((item) => {
     return item.itemCount > 0;
   });
@@ -47,7 +65,14 @@ function App() {
         cartCount={cartProducts.length}
         cartOpenHandler={cartOpenHandler}
       />
-      {isCartOpen && <Modal products={cartProducts} />}
+      {isCartOpen && (
+        <Modal
+          products={cartProducts}
+          changeItemCount={changeItemCount}
+          deleteItemFromCart={deleteItemFromCart}
+          emptyCart={emptyCart}
+        />
+      )}
       <Products products={products} changeItemCount={changeItemCount} />
     </div>
   );

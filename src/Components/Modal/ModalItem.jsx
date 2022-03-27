@@ -5,7 +5,10 @@ export default function ModalItem({
   id,
   image,
   title,
-  price
+  price,
+  itemCount,
+  changeItemCount,
+  deleteItemFromCart,
 }) {
   return (
     <div className="Wrapper" key={id}>
@@ -16,29 +19,27 @@ export default function ModalItem({
       <div className="Counter">
         <button
           onClick={() => {
-            subModalCount(id);
+            changeItemCount(id, -1);
           }}
         >
           -
         </button>
         <div>
-          <p>Total Count: {totalCount} </p>
-          <div> Total Cost: {(price * totalCount).toFixed(2)}</div>
+          <p>Total Count: {itemCount} </p>
+          <div> Total Cost: {(price * itemCount).toFixed(2)}</div>
         </div>
         <button
           onClick={() => {
-            addModalCount(id);
+            changeItemCount(id, 1);
           }}
         >
           +
         </button>
         <img
           className="trash"
-          onClick={() => {
-            emptyModal(id);
-          }}
           src="https://cdn2.iconfinder.com/data/icons/e-business-helper/240/627249-delete3-512.png"
           alt="trash"
+          onClick={() => deleteItemFromCart(id)}
         />
       </div>
     </div>
