@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Header.css";
 import CartLogo from "../../Assets/cart.svg";
 
-export default function Header({ cartOpenHandler }) {
+export default function Header({ cartOpenHandler, cartCount }) {
   return (
     <div>
       <header className="header">
@@ -15,6 +15,7 @@ export default function Header({ cartOpenHandler }) {
             width="50px"
             height="50px"
           />
+          <span> {cartCount} </span>
         </div>
       </header>
     </div>

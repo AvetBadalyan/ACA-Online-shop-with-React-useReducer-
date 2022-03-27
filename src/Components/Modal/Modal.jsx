@@ -1,22 +1,16 @@
 import React from "react";
+import Products from "../Products/Products";
 import "./Modal.css";
 import ModalItem from "./ModalItem";
 
-export default function Modal({
-  arrayofProductsInCart,
-  addModalCount,
-  subModalCount,
-  emptyModal,
-}) {
+export default function Modal({products}) {
   return (
     <div className="Modal">
-      {arrayofProductsInCart.map((item) => (
+      {products.map((item) => (
         <ModalItem
           {...item}
           key={item.id}
-          addModalCount={addModalCount}
-          subModalCount={subModalCount}
-          emptyModal={emptyModal}
+        
         />
       ))}
     </div>

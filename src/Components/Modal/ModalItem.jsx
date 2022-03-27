@@ -5,11 +5,7 @@ export default function ModalItem({
   id,
   image,
   title,
-  price,
-  totalCount,
-  addModalCount,
-  subModalCount,
-  emptyModal,
+  price
 }) {
   return (
     <div className="Wrapper" key={id}>
