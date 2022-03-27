@@ -10,10 +10,6 @@ function App() {
   const [products, setProducts] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const cartOpenHandler = () => {
-    setIsCartOpen(!isCartOpen);
-  };
-
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
@@ -26,14 +22,33 @@ function App() {
       });
   }, []);
 
+  const cartOpenHandler = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
+  const changeItemCount = (id, delta) => {
+    const changedCart = products.map((item) => {
+      if (item.id === id) {
+        return { ...item, itemCount: item.itemCount + delta };
+      } else {
+        return item;
+      }
+    });
+    setProducts(changedCart);
+  };
+
   const cartProducts = products.filter((item) => {
     return item.itemCount > 0;
-  } )
+  });
+
   return (
     <div className="App">
-      <Header cartCount={cartProducts.length} cartOpenHandler={cartOpenHandler} />
+      <Header
+        cartCount={cartProducts.length}
+        cartOpenHandler={cartOpenHandler}
+      />
       {isCartOpen && <Modal products={cartProducts} />}
-      <Products products={products} />
+      <Products products={products} changeItemCount={changeItemCount} />
     </div>
   );
 }
