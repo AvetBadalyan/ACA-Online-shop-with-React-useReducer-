@@ -12,7 +12,7 @@ export default function ModalItem({
 }) {
   return (
     <div className="Wrapper" key={id}>
-      <img src={image} alt="image" className="modal-item" />
+      <img src={image} alt="image" className="modal-item-image" />
       <div className="title">{title.slice(0, 12)}...</div>
       <div className="price">$ {price.toFixed(2)}</div>
 

@@ -1,6 +1,5 @@
 .header {
   padding: 20px;
-  background-color: blue;
   height: 200px;
   width: 100vw;
   display: flex;
@@ -22,4 +21,5 @@ h1 {
   justify-content: flex-end;
   align-items: center;
   margin-right: 20px;
+  z-index: 9999999999999;
 }

@@ -1,11 +1,17 @@
 .Modal {
-  height: 80vh;
-  width: 80vw;
+  height: 50vh;
+  width: 50vw;
   overflow: scroll;
-  background-color: rgba(0, 0, 255, 0.5);
+ background: rgba(255, 255, 255, 0.644);
   border: 2px solid black;
+  border-radius: 20%;
   cursor: pointer;
   position: absolute;
+  top: 0;
   color: black;
   right: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

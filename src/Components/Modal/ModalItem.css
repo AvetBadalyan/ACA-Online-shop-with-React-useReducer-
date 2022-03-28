@@ -6,9 +6,17 @@
 .Wrapper,
 button {
   font-size: 20px;
+  
 }
 
-.modal-item {
+.modal-item-image {
   width: 88px;
   height: 88px;
+}
+
+.Wrapper {
+  background-color: rgba(224, 147, 255, 0.897);
+  color: blueviolet;
+  height: 110px;
+  width: 220px;
 }

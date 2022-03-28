@@ -1,7 +1,7 @@
 .Wrapper {
   box-sizing: border-box;
   width: 300px;
-  height: 500px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,6 +11,8 @@
   border: 2px solid gray;
   border-radius: 20%;
   box-shadow: 2px 10px 10px 1px rgba(70, 70, 70, 0.8);
+  background-color: white;
+  color: blueviolet;
 }
 
 .item-image {

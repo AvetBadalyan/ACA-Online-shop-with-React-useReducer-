@@ -61,6 +61,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <Header
         cartCount={cartProducts.length}
         cartOpenHandler={cartOpenHandler}
