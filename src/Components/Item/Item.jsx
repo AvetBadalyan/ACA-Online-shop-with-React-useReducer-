@@ -11,7 +11,7 @@ export default function Item({
   changeItemCount,
 }) {
   return (
-    <div className="Wrapper" key={id}>
+    <div className="item-Wrapper" key={id}>
       <img src={image} alt="image" className="item-image" />
       <div className="title">{title.slice(0, 12)}...</div>
       <div className="price">$ {price.toFixed(2)}</div>

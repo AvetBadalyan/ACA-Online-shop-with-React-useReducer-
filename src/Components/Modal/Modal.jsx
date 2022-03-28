@@ -10,13 +10,16 @@ export default function Modal({
 }) {
   return (
     <div className="Modal">
-      <p> Empty the Cart </p>
-      <img
-        className="trash"
-        src="https://cdn2.iconfinder.com/data/icons/e-business-helper/240/627249-delete3-512.png"
-        alt="trash"
-        onClick={emptyCart}
-      />
+      <div className="empty-cart-logo">
+        <p> Empty the Cart </p>
+        <img
+          className="trash"
+          src="https://cdn2.iconfinder.com/data/icons/e-business-helper/240/627249-delete3-512.png"
+          alt="trash"
+          onClick={emptyCart}
+        />
+      </div>
+
       {products.map((item) => (
         <ModalItem
           {...item}

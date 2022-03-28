@@ -3,10 +3,8 @@
   height: 20px;
 }
 
-.Wrapper,
-button {
+.modal-button {
   font-size: 20px;
-  
 }
 
 .modal-item-image {
@@ -14,9 +12,20 @@ button {
   height: 88px;
 }
 
-.Wrapper {
+.modal-Wrapper {
   background-color: rgba(224, 147, 255, 0.897);
   color: blueviolet;
-  height: 110px;
-  width: 220px;
+  height: 100px;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.modal-Counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
