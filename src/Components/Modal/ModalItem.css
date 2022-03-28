@@ -13,6 +13,7 @@
 }
 
 .modal-Wrapper {
+  box-sizing: border-box;
   background-color: rgba(224, 147, 255, 0.897);
   color: blueviolet;
   height: 100px;
@@ -28,4 +29,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
