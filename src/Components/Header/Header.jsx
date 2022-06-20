@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
-import CartLogo from "../../Assets/cart.svg";
+import CartLogo from "./../../assets/cart.svg";
 
 export default function Header({ cartOpenHandler, cartCount }) {
   return (
@@ -15,7 +15,7 @@ export default function Header({ cartOpenHandler, cartCount }) {
             width="50px"
             height="50px"
           />
-          <span> {cartCount} </span>
+          <span className="cartCount"> {cartCount} </span>
         </div>
       </header>
     </div>

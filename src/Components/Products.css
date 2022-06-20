@@ -1,0 +1,8 @@
+.All-products {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    padding: 20px;
+    margin: 20px;
+}

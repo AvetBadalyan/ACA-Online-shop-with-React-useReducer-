@@ -1,4 +1,4 @@
-![Screenshot](./src/screenshot.jpg)
+![Screenshot](./shop%20screenshot.jpg)
 
 # Getting Started with Create React App
 

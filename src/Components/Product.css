@@ -1,0 +1,11 @@
+.Wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    width: 300px;
+    margin: 10px;
+    padding: 8px;
+}
+

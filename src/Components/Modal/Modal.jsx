@@ -11,7 +11,7 @@ export default function Modal({
   return (
     <div className="Modal">
       <div className="empty-cart-logo">
-        <p> Empty the Cart </p>
+        <p className="empty-cart-text"> Empty the Cart </p>
         <img
           className="trash"
           src="https://cdn2.iconfinder.com/data/icons/e-business-helper/240/627249-delete3-512.png"

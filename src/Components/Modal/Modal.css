@@ -1,14 +1,14 @@
 .Modal {
   height: 100vh;
-  width: 50vw;
+  width: 40%;
   overflow: scroll;
-  background: rgba(255, 255, 255, 0.644);
+  background: rgba(255, 255, 255, 0.7);
   border: 2px solid black;
-  border-radius: 20%;
+  border-radius: 10%;
   cursor: pointer;
   position: absolute;
   top: 0;
-  color: black;
+  color:  rgba(72,17,115, 1);
   right: 1vw;
   display: flex;
   justify-content: center;
@@ -22,4 +22,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.empty-cart-text{
+  font-size: 30px;
+}
+
+.trash {
+  width: 30px;
+  height: 30px;
 }

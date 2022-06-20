@@ -1,6 +1,6 @@
 import React from "react";
 import "./Item.css";
-import Cart from "../../Assets/cart.svg";
+import Cart from "./../../assets/cart.svg";
 
 export default function Item({
   price,
